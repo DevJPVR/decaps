@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: github
+  repo: DevJPVR/decaps
   branch: main # Ou sua branch principal
 
 media_folder: public/img
