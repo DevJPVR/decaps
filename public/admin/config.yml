@@ -17,3 +17,14 @@ collections:
           - { label: "Título", name: "title", widget: "string" }
           - { label: "Descrição", name: "description", widget: "string" }
           - { label: "Conteúdo", name: "body", widget: "markdown" }
+          - { label: "Texto do Botão", name: "label", widget: "string", required: false }
+          - { label: "Link do Botão", name: "link", widget: "string", required: false }
+  - name: "resource"
+    label: "Resources"
+    folder: "src/content/resources" # Pasta onde os arquivos de resource serão salvos
+    create: true # Permite criar novos arquivos
+    slug: "{{slug}}" # Define o slug com base no título (você pode personalizar isso)
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" } # Você pode deixar o CMS gerar ou definir manualmente
+      - { label: "Conteúdo", name: "body", widget: "markdown" }

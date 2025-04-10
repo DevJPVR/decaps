@@ -1,28 +1,16 @@
-import { useState, useEffect } from 'react';
-import fm from 'front-matter';
+
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/home';
+import ResourcesPage from './pages/resources';
+import ResourceDetailPage from './pages/resources/[slug]';
 
 function App() {
-  const [content, setContent] = useState('');
-  const [metadata, setMetadata] = useState({});
-
-  useEffect(() => {
-    import('../content/home.md?raw')
-      .then((module) => {
-        const parsed = fm(module.default);
-        setContent(parsed.body);
-        setMetadata(parsed.attributes);
-      })
-      .catch((error) => {
-        console.error("Erro ao carregar o arquivo Markdown:", error);
-      });
-  }, []);
-
   return (
-    <div className="container">
-      <h1>{metadata.title}</h1>
-      <p>{metadata.description}</p>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/resources" element={<ResourcesPage />} />
+      <Route path="/resource/:slug" element={<ResourceDetailPage />} />
+    </Routes>
   );
 }
 
