@@ -3,6 +3,9 @@ backend:
   repo: DevJPVR/decaps
   branch: main 
 
+  site_url: https://devjpvr.github.io/decaps/
+  display_url: https://devjpvr.github.io/decaps/
+
 media_folder: public/img
 public_folder: /img
 
