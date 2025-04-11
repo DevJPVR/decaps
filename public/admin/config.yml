@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: DevJPVR/decaps
-  branch: main # Ou sua branch principal
+  branch: main 
 
 media_folder: public/img
 public_folder: /img
@@ -21,10 +21,10 @@ collections:
           - { label: "Link do Botão", name: "link", widget: "string", required: false }
   - name: "resource"
     label: "Resources"
-    folder: "src/content/resources" # Pasta onde os arquivos de resource serão salvos
-    create: true # Permite criar novos arquivos
-    slug: "{{slug}}" # Define o slug com base no título (você pode personalizar isso)
+    folder: "src/content/resources" 
+    create: true 
+    slug: "{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" } # Você pode deixar o CMS gerar ou definir manualmente
+      - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Conteúdo", name: "body", widget: "markdown" }

@@ -19,9 +19,12 @@ function HomePage() {
   }, []);
 
   return (
-    <div className="container">
-      <h1>{metadata.title}</h1>
-      <p>{metadata.description}</p>
+    <div className="mx-auto max-w-[1200px] p-4">
+      <h1 className="text-2xl text-orange-500 mb-6">{metadata.title}</h1>
+      <p className="mb-4">{metadata.description}</p>
+      <div className="mb-4">
+        <a href={metadata.link}>{metadata.label}</a>
+      </div>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   );

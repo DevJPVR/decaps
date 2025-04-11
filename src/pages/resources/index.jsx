@@ -8,7 +8,6 @@ function ResourcesPage() {
   useEffect(() => {
     const importResources = async () => {
       try {
-        // Use import.meta.glob para obter os caminhos dos arquivos
         const modules = import.meta.glob('../../content/resources/*.md');
 console.log("Modules (glob):", modules);
 const resourceList = [];
