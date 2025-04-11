@@ -1,0 +1,29 @@
+<!-- public/404.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+
+    const repoName = 'decaps'; 
+    const basePath = '/' + repoName;
+
+
+    sessionStorage.redirect = location.pathname;
+
+    location.href = basePath + '/';
+  </script>
+</head>
+<body>
+  If you are not redirected automatically, follow this <a id="redirect-link" href="/decaps/">link to the application</a>.
+  <script>
+    const redirectLink = document.getElementById('redirect-link');
+    const repoName = 'decaps';
+    const basePath = '/' + repoName;
+    if (redirectLink) {
+        redirectLink.href = basePath + '/';
+    }
+  </script>
+</body>
+</html>
