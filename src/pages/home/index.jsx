@@ -1,31 +1,22 @@
-
-import { useState, useEffect } from 'react';
-import fm from 'front-matter';
+import Content, { frontmatter } from "../../content/home.md";
+import { Button } from "@/components/ui/button";
 
 function HomePage() {
-  const [content, setContent] = useState('');
-  const [metadata, setMetadata] = useState({});
-
-  useEffect(() => {
-    import('../../content/home.md?raw')
-      .then((module) => {
-        const parsed = fm(module.default);
-        setContent(parsed.body);
-        setMetadata(parsed.attributes);
-      })
-      .catch((error) => {
-        console.error("Erro ao carregar a página inicial:", error);
-      });
-  }, []);
+  const metadata = frontmatter;
 
   return (
     <div className="mx-auto max-w-[1200px] p-4">
-      <h1 className="text-2xl text-orange-500 mb-6">{metadata.title}</h1>
+      <h1 className="text-2xl mb-6 text-red-400">{metadata.title}</h1>
       <p className="mb-4">{metadata.description}</p>
       <div className="mb-4">
-        <a href={metadata.link}>{metadata.label}</a>
+        <Button asChild variant={"default"} size="lg">
+          <a href={metadata.link}>{metadata.label}</a>
+        </Button>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+
+      <div className="prose lg:prose-xl max-w-none">
+        <Content />
+      </div>
     </div>
   );
 }
