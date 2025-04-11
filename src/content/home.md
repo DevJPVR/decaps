@@ -5,7 +5,7 @@ description: Lorem Ipsum is simply dummy text of the printing and typesetting
   the 1500s, when an unknown printer took a galley of type and scrambled it to
   make a type specimen book.
 label: Saber mais
-link: http://localhost:5173/resources
+link: /decaps/resources
 ---
 ## Where does it come from?
 
