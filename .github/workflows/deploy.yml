@@ -3,16 +3,14 @@ name: Decaps Deploy
 
 on:
   push:
-    branches: ["main"] # Ou o branch que você quer deployar
-  workflow_dispatch: # Permite acionar manualmente
+    branches: ["main"] 
+  workflow_dispatch: 
 
-# Permissões para o GITHUB_TOKEN
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Permite um deploy concorrente ser cancelado
 concurrency:
   group: "pages"
   cancel-in-progress: true
